@@ -1,0 +1,148 @@
+
+* {
+    font-family: 'Times New Roman', Times, serif;
+}
+body {
+    box-sizing: border-box;
+    margin: 0;
+}
+header {
+    background-color: rgb(230, 230, 230);
+    display: flex;
+    justify-content: space-between;
+    padding: 0 2em;
+}
+.nav-items {
+    display: none;
+}
+nav ul {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    
+}
+ul li {
+    list-style: none;
+    padding: 1rem 0 1rem 2rem;
+    align-items: center;
+    align-self: center;
+    text-align: center;
+}
+#hamburger-icon {
+    display: block;
+    width: 1rem;
+    object-fit: contain;
+
+}
+.main-message {
+    background-color: #cdddf0;
+    height: 40vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+}
+
+
+.section-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10vh;
+}
+.main-content {
+    display: block;
+    margin: 0 1.5rem;
+
+
+    
+}
+.content-box {
+    background-color: #8999ac;
+    height: 20vh;
+    text-align: center;
+    padding-top: 1rem;
+    margin-bottom: 1.5rem ;
+    width: 100%;
+}
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem 0;
+}
+.cta {
+    background-color: #cdddf0;
+    padding: 1rem;
+}
+
+/* query selector */
+
+@media screen and (min-width: 500px) and (max-width: 799px) {
+    .main-content {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin: 0 auto;
+       
+        
+    }
+    .content-box {
+        width: 48vw;
+        height: 15vh;
+        padding: 1rem 0 0 0;
+        margin: 0;
+    }
+    
+}
+@media screen and (min-width: 800px) and (max-width: 1199px) {
+    .main-content {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin: 0 auto;
+        
+        
+    }
+    .content-box {
+        width: 48vw;
+        height: 15vh;
+        padding: 1rem 0 0 0;
+        margin: 0;
+    }
+    #hamburger-icon {
+        display: none;
+    }
+    .nav-items {
+        display: flex;
+        text-align: center;
+    }
+    /* nav ul {
+        justify-content: start;
+    } */
+}
+@media screen and (min-width: 1200px) {
+    .main-content {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin: 0 auto;
+        max-width: 1200px;
+    }
+    .content-box {
+        width: 48vw;
+        max-width: 590px;
+        height: 15vh;
+        padding: 1rem 0 0 0;
+        margin: 0;
+    }
+    #hamburger-icon {
+        display: none;
+    }
+    .nav-items {
+        display: block;
+    }
+}
