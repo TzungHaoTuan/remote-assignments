@@ -53,6 +53,9 @@ const discountedPrice = calculateData({
 });
 console.log(discountedPrice) // show the total price of all products after applying a discount
 
+
+
+
 // Assignment-5
 function twoSum(nums, target) {
     // your code here
@@ -73,15 +76,35 @@ console.log(twoSum([2, 7, 11, 15], 22))
     [0, 1] Because:nums[0] + nums[1] is 9
     */
 
-function twoSumNew(nums, target) {
+//Works! but if if elements in same value, only return one array...
+function twoSum2(nums, target) {
     // your code here
     for(let i = 0; i < nums.length; i++){
         for(let j = i+1; j < nums.length; j++){
-            if(nums[i] + nums[j] === target){
+            if(nums[i] + nums[j] === target){  
                 return [i, j]
             }
         }
     }
 }
-console.log(twoSumNew([2, 7, 11, 15], 22))
-    
+console.log(twoSum2([2, 7, 7, 15], 22))
+
+//Add another array and use push method
+function twoSum3(nums, target) {
+    // your code here
+    let arrayOfNums = []
+    for(let i = 0; i < nums.length; i++){
+        for(let j = i+1; j < nums.length; j++){
+            if(nums[i] + nums[j] === target){
+                arrayOfNums.push([i,j])
+            }
+        }
+    }
+    return arrayOfNums
+}
+console.log(twoSum3([2, 7, 7, 15], 22))
+
+
+
+
+
