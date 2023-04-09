@@ -29,7 +29,8 @@ function calculate(args) {
 //Assignment-3
 function calculateData(data) {
     // your code here
-    const discountProducts = data.products.map(product => product.price * data.discount)
+    const afterDiscount = 1 - data.discount
+    const discountProducts = data.products.map(product => product.price * afterDiscount)
     const totalPrice = discountProducts.reduce((acc, cur) => acc + cur)
     return totalPrice
 }
@@ -52,7 +53,7 @@ const discountedPrice = calculateData({
 });
 console.log(discountedPrice) // show the total price of all products after applying a discount
 
-//Assignment-5
+// Assignment-5
 function twoSum(nums, target) {
     // your code here
     for(let i = 0; i < nums.length; i++){
@@ -71,4 +72,16 @@ console.log(twoSum([2, 7, 11, 15], 22))
     twoSum([2, 7, 11, 15], 9); Should returns:
     [0, 1] Because:nums[0] + nums[1] is 9
     */
+
+function twoSumNew(nums, target) {
+    // your code here
+    for(let i = 0; i < nums.length; i++){
+        for(let j = i+1; j < nums.length; j++){
+            if(nums[i] + nums[j] === target){
+                return [i, j]
+            }
+        }
+    }
+}
+console.log(twoSumNew([2, 7, 11, 15], 22))
     
