@@ -11,6 +11,9 @@ app.get('/', (req, res) => {
 //Assignment-3
 
 app.use(express.static("public"))
+app.post("/:sum.html", (req, res) => {
+  
+})
 
 //Assignment-2
 

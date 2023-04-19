@@ -10,23 +10,33 @@
     <div id="sum"></div>
     
     <script>
-        function getData(){
-            fetch("http://localhost:3000/sum.html")
-            .then(respond => {
-                let input = document.querySelector("#input")
-                let total = parseInt(input.value)
-                let sum = document.querySelector("#sum")
+        // function getData(){
+        //     fetch("http://localhost:3000/sum.html")
+        //     .then(respond => {
+        //         let input = document.querySelector("#input")
+        //         let total = parseInt(input.value)
+        //         let sum = document.querySelector("#sum")
 
-                if(input.value === ""){
-                    sum.innerHTML = "Lack of Parameter"
-                }else if(isNaN(total)){
-                    sum.innerHTML = "Wrong Parameter"
-                }else{
-                    sum.innerHTML = (total+1)*total/2
-                }  
-            })
-        }
-        
+        //         if(input.value === ""){
+        //             sum.innerHTML = "Lack of Parameter"
+        //         }else if(isNaN(total)){
+        //             sum.innerHTML = "Wrong Parameter"
+        //         }else{
+        //             sum.innerHTML = (total+1)*total/2
+        //         }  
+        //     })
+        // }
+
+        function getData() {
+            let input = document.querySelector("#input")
+            let sum = document.querySelector("#sum")
+
+            fetch(`http://localhost:3000/getData?number=${input.value}`)
+            .then(response => response.text())
+            .then(data => sum.innerHTML = data)
+            
+            input.value = ""
+        }     
     </script>
     
 </body>
