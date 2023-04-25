@@ -11,16 +11,11 @@ export default function Header() {
     } )
 
 
-    const [isClick, setIsClick] = useState(false)
+    const [toggle, setToggle] = useState(false)
 
-    const barContainer = document.querySelector(".bar-container")
-    const navItems = document.querySelector(".nav-items")
-
-    const handleClick = prevState => {
-        setIsClicked(!prevState)
-        barContainer.classList.toggle("change")
-        navItems.classList.toggle("nav-items-fixed")
-    }
+   const handleClick = () => {
+    setToggle(!toggle)
+   }
 
     return (
         <header>
@@ -28,11 +23,11 @@ export default function Header() {
                 <p>Website Title / Logo</p>
             </section>
             <nav>
-                <ul className="nav-items" >
+                <ul className={`nav-items ${toggle ? "nav-items-fixed" : ""}`} >
                     {list}
                 </ul>
             </nav>
-            <div onClick={handleClick} className="bar-container" >
+            <div onClick={handleClick} className={`bar-container ${toggle ? "change" : ""}`}>
                 <div class="bar1"></div>
                 <div class="bar2"></div>
                 <div class="bar3"></div>

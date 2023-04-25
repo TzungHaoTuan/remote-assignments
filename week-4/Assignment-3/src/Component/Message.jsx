@@ -7,8 +7,9 @@ export default function Message() {
         const handleClick = event => {
           event.target.textContent = "Have a Good Time!"
         }
-        const element = ref.current;
-        element.addEventListener('click', handleClick);  
+        const element = ref.current
+        element.addEventListener('click', handleClick)
+
     }, [])
    
     return (
